@@ -1,0 +1,27 @@
+# Credentials and host-local settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.codex/
+.claude/
+.aws/
+
+# Runtime files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+
+# Projects and local preparation reports are outside this skill repository
+/review/
+/workspace/
+/output/
+/results/
+/paper/
+/tmp/

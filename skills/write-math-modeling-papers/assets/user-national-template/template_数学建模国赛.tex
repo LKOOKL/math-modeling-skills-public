@@ -1,0 +1,448 @@
+\documentclass[12pt]{ctexart} % 专门用于中文排版，基于 article 文档类。
+
+%================== 页面布局 ==================%
+\usepackage[a4paper, margin=2.5cm]{geometry} % A4纸，2.5cm页边距
+\usepackage{filecontents} % 用于在tex文档内部创建文件
+
+%================== 数学与符号 ==================%
+\usepackage{amsmath} % 增强数学公式排版
+\usepackage{amsthm} % 定理环境
+\usepackage{mathrsfs} % 花体字体 \mathscr
+\usepackage{amssymb} % 更多数学符号
+
+%================== 图形与表格 ==================%
+\usepackage{graphicx} % 插入图片
+\usepackage{diagbox} % 斜线表头
+\usepackage{booktabs} % 高质量表格线
+\usepackage{makecell} % 增强表格单元格
+\usepackage{array} % 增强表格和数组
+\usepackage{multirow} % 合并多行
+\usepackage{multicol} % 多列布局
+\usepackage{longtable} % 跨页长表格
+\usepackage{colortbl} % 表格上色
+\usepackage{subcaption} % 子图/子表
+\usepackage{wrapfig} % 图文环绕
+\usepackage{overpic} % 图片上添加文本
+\usepackage{float} % 浮动体控制，H选项
+\usepackage{siunitx} % 数字和单位排版
+\usepackage{tikz} % 矢量图形
+\usetikzlibrary{shapes.geometric, arrows, positioning} % TikZ 库
+
+%================== 代码高亮 ==================%
+\usepackage{listings}
+\lstset{
+	numbers=left,
+	numberstyle= \tiny,
+	breaklines,
+	extendedchars=false,
+	basicstyle=\small\ttfamily,
+	flexiblecolumns=true,
+	showstringspaces=false,
+	tabsize=4,
+	frame=shadowbox,
+	rulesepcolor= \color{ red!20!green!20!blue!20},
+	xleftmargin=2em, xrightmargin=2em, aboveskip=1em,
+	framexleftmargin=2em,
+	escapeinside=``,
+	keywordstyle=\color{blue!70},
+	commentstyle=\color{red!50!green!50!blue!50},
+}
+
+\lstnewenvironment{Matlab}[1][]{
+	\lstset{
+		language=Matlab,
+		deletekeywords={disp},
+		keywordstyle=\color{blue},
+		stringstyle=\color[rgb]{0.75,0,0.75},
+		commentstyle=\songti\color[rgb]{0,0.5,0},
+		#1
+	}
+}{}
+\lstnewenvironment{Python}[1][]{
+	\lstset{
+		language=Python,
+		keywordstyle=\color[RGB]{255,119,0},
+		morekeywords={as},
+		deletekeywords={print},
+		keywordstyle=[2]\color[RGB]{144,0,144},
+		morekeywords=[2]{print},
+		stringstyle=\color[RGB]{0,170,0},
+		commentstyle=\songti\color[RGB]{221,0,0},
+		#1
+	}
+}{}
+
+%================== 伪代码 ==================%
+\usepackage[ruled,lined,vlined]{algorithm2e}
+\renewcommand{\algorithmcfname}{算法}
+\SetKwInput{KwIn}{输入}
+\SetKwInput{KwOut}{输出}
+\SetKwFor{For}{for}{do}{end for}
+\SetKwIF{If}{ElseIf}{Else}{if}{then}{else if}{else}{end if}
+\SetKw{KwWhile}{while}
+\SetKw{KwDo}{do}
+\SetKw{KwEndWhile}{end while}
+\SetKw{Return}{return}
+\SetCommentSty{rmfamily}
+% 可跨页伪代码环境
+\makeatletter
+\newenvironment{breakablealgorithm}
+{ \begin{center}
+		\refstepcounter{algorithm}
+		\hrule height.8pt depth0pt \kern2pt
+		\renewcommand{\caption}[2][\relax]{%
+			{\raggedright\textbf{\ALG@name~\thealgorithm} ##2\par}%
+			\ifx\relax##1\relax
+			\addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##2}%
+			\else
+			\addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##1}%
+			\fi
+			\kern2pt\hrule\kern2pt
+		}
+	}{
+		\kern2pt\hrule\relax
+	\end{center}
+}
+\makeatother
+
+%================== 其它工具 ==================%
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{url}
+\usepackage{emptypage}
+\usepackage{enumerate}
+\usepackage[section]{placeins}
+\usepackage[dvipsnames, table]{xcolor}
+\usepackage{tocloft}
+\usepackage[colorlinks=true, linkcolor=black, citecolor=blue, urlcolor=blue, unicode=true]{hyperref}
+\usepackage{cleveref}
+
+%================== 参考文献设置 ==================%
+\begin{filecontents}[overwrite]{aibib.bib}
+	@misc{AITool-DeepSeek,
+		note = {DeepSeek, DeepSeek-V3.1, 深度求索（DeepSeek）, 2025-09-07}
+	}
+\end{filecontents}
+
+\usepackage[backend=biber,style=gb7714-2015]{biblatex}
+\addbibresource{references.bib}
+\addbibresource{aibib.bib}
+
+%================== 全局设置 ==================%
+% 【修改1】页码设置：页脚居中，阿拉伯数字，无页眉
+\pagestyle{plain}
+
+% 【修改2】正文默认字号设为小四号，行距为单倍行距
+\zihao{-4}
+\singlespacing
+
+% 公式按章节编号
+\numberwithin{equation}{section}
+
+% 【修改3】章节标题格式（严格按照规范）
+% 一级标题：四号黑体，居中，编号为"一、""二、"
+% 二级标题：小四号黑体，左对齐
+% 三级标题：小四号黑体，左对齐
+\ctexset{
+	section = {
+		format = {\zihao{4}\heiti\centering},
+		name = {,、},
+		number = \chinese{section},
+		beforeskip = {1.0ex plus 0.2ex minus .2ex},
+		afterskip = {0.8ex plus 0.2ex minus .2ex},
+	},
+	subsection = {
+		format = {\zihao{-4}\heiti\raggedright},
+		beforeskip = {0.8ex plus 0.2ex minus .2ex},
+		afterskip = {0.6ex plus 0.1ex minus .1ex},
+	},
+	subsubsection = {
+		format = {\zihao{-4}\heiti\raggedright},
+		beforeskip = {0.6ex plus 0.2ex minus .2ex},
+		afterskip = {0.4ex plus 0.1ex minus .1ex},
+	},
+}
+
+% 【修改4】摘要标题格式：四号黑体居中
+\renewcommand{\abstractname}{\zihao{4}\heiti 摘要}
+
+\date{}
+
+% 自定义居中命令
+\newcommand{\tableCenter}[1]{\makecell[c]{#1}}
+
+%================== 正文 ==================%
+% 【修改5】论文题目：三号黑体
+\title{\heiti\zihao{3}标题}
+\author{}
+
+\begin{document}
+	
+	% 【修改6】第一页必须有页码，从1开始。删除 \thispagestyle{empty}
+	\setcounter{page}{1}
+	\date{\vspace{-2em}}
+	\maketitle
+	
+	% 【修改7】调整标题与摘要之间的距离（更合理的间距）
+	\vspace{-4em}
+	% 摘要正文：小四号宋体
+	\begin{abstract}{\zihao{-4}\songti} 
+	
+		随着
+		
+		\textbf{针对问题一：}
+		
+		\textbf{针对问题二：}
+		
+		\textbf{针对问题三：}
+		
+		本文特色在于：
+		\\[\baselineskip]
+		\noindent
+		\textbf{关键词:}关键词1\qquad 关键词2\qquad 关键词3\qquad 关键词4
+	\end{abstract}
+	
+	\newpage
+	
+	\section{问题重述}\label{sec:问题重述}
+	
+	\subsection{问题背景}\label{sec:问题背景}
+	
+	
+	\subsection{问题提出}\label{sec:问题提出}
+	
+	\textbf{问题一：}
+	
+	
+	\textbf{问题二：}
+	
+	
+	\textbf{问题三：}
+	
+	
+	\section{问题分析}\label{sec:问题分析}
+	
+	\subsection{问题一的分析}
+	
+	
+	\subsection{问题二的分析}
+	
+	
+	\subsection{问题三的分析}
+	
+	
+	\section{模型假设}\label{sec:模型假设}
+	
+	\begin{enumerate}
+		\item 假设1
+		\item 假设2
+	\end{enumerate}
+	
+	
+	\section{符号说明}\label{sec:符号说明}
+	
+	% 【改进】符号说明表格：使用 tabular* 让表格宽度等于文本宽度，更美观
+	\begin{table}[H]
+		\centering
+		\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} c l l}
+			\toprule
+			符号 & 含义 & 单位 \\
+			\midrule
+			$x$ & 变量含义 & \si{\metre} \\
+			$v$ & 速度 & \si{\metre\per\second} \\
+			\bottomrule
+		\end{tabular*}
+	\end{table}
+	
+	\section{数据预处理}\label{sec:数据预处理}
+	
+	
+	\section{问题一的模型建立与求解}\label{sec:问题一的模型建立与求解}
+	
+	
+	\section{问题二的模型建立与求解}\label{sec:问题二的模型建立与求解}
+	
+	% --- TikZ 流程图示例 ---
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[node distance=2cm, auto]
+			\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=red!30]
+			\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+			\tikzstyle{arrow} = [thick,->,>=stealth]
+			
+			\node (start) [startstop] {开始};
+			\node (pro1) [process, below=of start] {处理步骤};
+			\node (stop) [startstop, below=of pro1] {结束};
+			
+			\draw [arrow] (start) -- (pro1);
+			\draw [arrow] (pro1) -- (stop);
+		\end{tikzpicture}
+		\caption{一个简单的 TikZ 流程图示例}
+		\label{fig:tikz_example}
+	\end{figure}
+	
+	
+	% --- 多子图示例（取消注释使用）---
+%	\begin{figure}[H]
+%		\centering
+%		\begin{minipage}{0.48\textwidth}
+%			\centering
+%			\includegraphics[width=\linewidth]{images/123.jpg}
+%			\subcaption{子图标题1}
+%			\label{fig:sub1}
+%		\end{minipage}
+%		\hfill
+%		\begin{minipage}{0.48\textwidth}
+%			\centering
+%			\includegraphics[width=\linewidth]{images/123.jpg}
+%			\subcaption{子图标题2}
+%			\label{fig:sub2}
+%		\end{minipage}
+%		
+%		\vspace{1em}
+%		
+%		\begin{minipage}{0.48\textwidth}
+%			\centering
+%			\includegraphics[width=\linewidth]{images/123.jpg}
+%			\subcaption{子图标题3}
+%			\label{fig:sub3}
+%		\end{minipage}
+%		\hfill
+%		\begin{minipage}{0.48\textwidth}
+%			\centering
+%			\includegraphics[width=\linewidth]{images/123.jpg}
+%			\subcaption{子图标题4}
+%			\label{fig:sub4}
+%		\end{minipage}
+%		\caption{总标题}
+%		\label{fig:main_figure}
+%	\end{figure}
+	
+	
+	% --- 单张图片示例（取消注释使用）---
+%	\begin{figure}[H]
+%		\centering
+%		\includegraphics[width=0.7\textwidth]{images/123.jpg}
+%		\caption{单张图片标题}
+%		\label{fig:single_image}
+%	\end{figure}
+	
+	
+	% --- 伪代码示例 ---
+	\begin{algorithm}[H]
+		\caption{K-Means 聚类算法}\label{alg:kmeans}
+		\KwIn{
+			样本数据集 $D = \{x_1, x_2, \dots, x_m\}$\;
+			簇的数量 $K$\;
+			最大迭代次数 $N$\;
+		}
+		\KwOut{
+			簇划分 $C = \{C_1, C_2, \dots, C_K\}$\;
+		}
+		\tcc{1. 初始化}
+		从数据集 $D$ 中随机选择 $K$ 个样本作为初始簇中心 $\mu$\;
+		初始化迭代次数 $n \leftarrow 0$\;
+		\tcc{2. 开始迭代}
+		\While{$n < N$ 且簇中心仍在变化}{
+			\tcc{2.1 分配步骤（E-step）}
+			\For{$k=1, \dots, K$}{
+				初始化簇 $C_k = \emptyset$\;
+			}
+			\For{每个样本 $x_j \in D$}{
+				计算 $x_j$ 与各簇中心的距离\;
+				将 $x_j$ 划入最近的簇\;
+			}
+			\tcc{2.2 更新步骤（M-step）}
+			\For{$k=1, \dots, K$}{
+				更新簇中心 $\mu'_k = \frac{1}{|C_k|} \sum_{x \in C_k} x$\;
+			}
+			\tcc{2.3 判断是否收敛}
+			\If{$\mu'_k = \mu_k$ for all $k$}{
+				\tcc{簇中心不再变化，算法收敛}
+				\textbf{break}\;
+			}
+			$\mu \leftarrow \mu'$\;
+			$n \leftarrow n + 1$\;
+		}
+		\Return 最终簇划分 $C$\;
+	\end{algorithm}
+	
+	
+	\section{问题三的模型建立与求解}\label{sec:问题三的模型建立与求解}
+	
+	
+	\section{模型的评价与推广}
+	
+	\subsection{模型的优点}
+	
+	\begin{enumerate}
+		\item 优点1
+		\item 优点2
+	\end{enumerate}
+	
+	
+	\subsection{模型的缺点}
+	
+	\begin{enumerate}
+		\item 缺点1
+		\item 缺点2
+	\end{enumerate}
+	
+	
+	\subsection{模型的推广}
+	
+	
+	%================== 参考文献 ==================%
+	\nocite{AITool-DeepSeek}
+	\printbibliography
+	
+	%================== 附录 ==================%
+	\newpage
+	\appendix
+	
+	% 【修改8】附录标题格式调整：取消居中，改为左对齐四号黑体（与正文章节区分）
+	\ctexset{section={
+			format={\zihao{4}\heiti\raggedright}
+	}}
+	
+	\begin{center}
+		\heiti\zihao{3} 附\hspace{1pc}录
+	\end{center}
+	
+	\section{支撑材料文件列表}\label{sec:支撑材料文件列表}
+	
+	\begin{table}[H]
+		\centering
+		\label{tab:支撑材料文件列表}
+		\renewcommand{\arraystretch}{1.2}
+		\begin{tabular*}{\textwidth}{l l @{\extracolsep{\fill}} l}
+			\toprule
+			\textbf{文件名} & \textbf{类型} & \textbf{简介} \\
+			\midrule
+			第一问代码.py & Python 代码文件 & 问题一模型建立与求解代码 \\
+			第二问代码.m  & Matlab 代码文件 & 问题二模型建立与求解代码 \\
+			第三问代码.py & Python 代码文件 & 问题三模型建立与求解代码 \\
+			人工智能工具使用说明.pdf & PDF 文件 & 人工智能工具的使用说明 \\
+			数据预处理.xlsx & Excel 文件 & 原始数据的预处理结果 \\
+			\bottomrule
+		\end{tabular*}
+	\end{table}
+	
+	\section{第一问代码（Python）}\label{sec:第一问代码}
+
+	
+	\section{第二问代码（Matlab）}\label{sec:第二问代码}
+	\begin{Python}
+
+	\end{Python}
+	\section{第三问代码（Python）}\label{sec:第三问代码}
+	\begin{Python}
+# 这是一个 Python 代码示例
+def hello_world():
+    print("Hello, World!")
+
+if __name__ == "__main__":
+    hello_world()
+	\end{Python}
+	
+\end{document}

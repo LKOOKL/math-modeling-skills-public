@@ -1,0 +1,2 @@
+# Match the bytes recorded in docs/source-manifest.json on checkout.
+skills/** -text

@@ -1,0 +1,277 @@
+{
+  "version": 2,
+  "snapshot_date": "2026-11-21",
+  "skill_count": 31,
+  "files": [
+    {
+      "path": "skills/code-reviewer/SKILL.md",
+      "bytes": 4372,
+      "sha256": "68d407c5c445bad9a1bb392a64691a52417b3cacc91fb539adcf37c6f9cf65ac"
+    },
+    {
+      "path": "skills/completeness-auditor/SKILL.md",
+      "bytes": 22814,
+      "sha256": "bb99bcaacd315eda9c00cd83f45c9b891fc524c565a340de10ef8508f7f4c076"
+    },
+    {
+      "path": "skills/consistency-auditor/SKILL.md",
+      "bytes": 21321,
+      "sha256": "2409912dbd7b0ab5f0724ed5e48f6063eb73a0f6c1d82a5c5541f452dfc03fc3"
+    },
+    {
+      "path": "skills/data-auditor-cleaner/SKILL.md",
+      "bytes": 15576,
+      "sha256": "4b29f190664ec99e91bffce0b4191a7eb98d283199b65a7da927ad52ac4a1519"
+    },
+    {
+      "path": "skills/decision-prompt-builder/SKILL.md",
+      "bytes": 8370,
+      "sha256": "0d65178a828f4861a4c4e973053cd6db6ac17ec3fdd46ffc76fe688f66d69ec6"
+    },
+    {
+      "path": "skills/figure-table-planner/SKILL.md",
+      "bytes": 25029,
+      "sha256": "186a1895d5f20f96e79f681f20fe551125e1ba69d772d39e092837475e658853"
+    },
+    {
+      "path": "skills/final-method-explainer/SKILL.md",
+      "bytes": 32292,
+      "sha256": "d8b6809380e2df5270b07ed3b23ae8873f88ae71116a6d1e8652c985c38a5e9a"
+    },
+    {
+      "path": "skills/formula-derivation/SKILL.md",
+      "bytes": 9274,
+      "sha256": "5959c154ad1619434a6df6085721d636b69cbcad05a545b449fe90179053f017"
+    },
+    {
+      "path": "skills/math-figure-generator/SKILL.md",
+      "bytes": 26671,
+      "sha256": "4a1e4aa1b16281cc6e5b6a4e693169d7dd2967774b98fc2fea0cbd2a3abe5a9f"
+    },
+    {
+      "path": "skills/math-figure-generator/references/chart-patterns.md",
+      "bytes": 17448,
+      "sha256": "184237f83440e8eb9637c5eb6ef1b0f1ef2c57882622c3afb59394b6669e1372"
+    },
+    {
+      "path": "skills/math-figure-generator/references/color-systems.md",
+      "bytes": 4764,
+      "sha256": "55f77eff4ee7f5823fb777d226b201d609c85270a165d54fd4001598669f78f5"
+    },
+    {
+      "path": "skills/math-figure-generator/references/layout-guide.md",
+      "bytes": 7137,
+      "sha256": "7924b89c02cf7cfc0994d0fc20927c42cd2a40b7d4e967df324efa5a25504177"
+    },
+    {
+      "path": "skills/matlab-code-reviewer/SKILL.md",
+      "bytes": 20112,
+      "sha256": "d718b5e78713e1d33bffcece8dcd76e372f1bc468715e9ee27dd20da666fbab5"
+    },
+    {
+      "path": "skills/matlab-model-code-generator/SKILL.md",
+      "bytes": 17244,
+      "sha256": "aef89af3b3303441c259cbf27dd5902515c97cc2d16ba37a8b423cdae818b851"
+    },
+    {
+      "path": "skills/method-selector/SKILL.md",
+      "bytes": 34413,
+      "sha256": "70acbab62625a97f205117b3f983cbdf47310d8e5c1fea5cdd93a4570d329278"
+    },
+    {
+      "path": "skills/model-assumptions-builder/SKILL.md",
+      "bytes": 15262,
+      "sha256": "651675e6e55824d5f8d804015b2028e821ed6294c8852099d234e6b777a0a4e9"
+    },
+    {
+      "path": "skills/model-code-analyzer/SKILL.md",
+      "bytes": 15223,
+      "sha256": "9ba2bf73facf3c9907e9a8b8a5dde18e4e7e9dc581d98f04c3915089ac20c40c"
+    },
+    {
+      "path": "skills/modeler-decision-logger/SKILL.md",
+      "bytes": 12142,
+      "sha256": "e9f9daaaf28647b7becfbc68d3b2275d22cd7bec5a7911d9f928163ee471525a"
+    },
+    {
+      "path": "skills/paper-compile/SKILL.md",
+      "bytes": 9659,
+      "sha256": "badc6a9743652c97c9b8edb2185866854292d7faefc381f8e748cc4dd152452c"
+    },
+    {
+      "path": "skills/paper-polisher/SKILL.md",
+      "bytes": 14226,
+      "sha256": "885132ddc256eeaf27bc7a6d45768b70b87fcc91787a26bf06924c89922a2bf0"
+    },
+    {
+      "path": "skills/paper-section-writer/SKILL.md",
+      "bytes": 36877,
+      "sha256": "277e510ca8da4f7cf3ebad9a9c48bf00f6e59da7b474a1ba7f62413ea401485f"
+    },
+    {
+      "path": "skills/problem-classifier/SKILL.md",
+      "bytes": 23584,
+      "sha256": "0ba89a68bab20d0a70b14e571fb79ed8f8b262317b8683926b635e9ac059a879"
+    },
+    {
+      "path": "skills/problem-parser/SKILL.md",
+      "bytes": 14625,
+      "sha256": "e2c3fbb1b3f7251f878697f3518b46d648f073d976eb552262387b16334c0162"
+    },
+    {
+      "path": "skills/python-code-reviewer/SKILL.md",
+      "bytes": 21981,
+      "sha256": "dcd992fc971fe133a9042fb7616d53ecf10e81d66d18895c676569a1641419f9"
+    },
+    {
+      "path": "skills/python-model-code-generator/SKILL.md",
+      "bytes": 20354,
+      "sha256": "11c6f1e4dc67551fa00a7abfaf1b042c1e3821a2b7a453f1632f12a6576c31ee"
+    },
+    {
+      "path": "skills/python-model-code-generator/assets/standalone_entry/code/Q1/q1_main.py",
+      "bytes": 3030,
+      "sha256": "d01d0b38d7bc2b23df243b5625d4ff39ac178b0aa9637def1b2128150f70c6ca"
+    },
+    {
+      "path": "skills/quality-assurance-auditor/SKILL.md",
+      "bytes": 26898,
+      "sha256": "e58c99cd1b94727e35338908dad6cfb36c26759d6cfc4f3bd05c739a4287b32e"
+    },
+    {
+      "path": "skills/reference-manager/SKILL.md",
+      "bytes": 10607,
+      "sha256": "4068c04a9d06d5c61accbbc095e82119c36326b02d2c5023f2095d4840871656"
+    },
+    {
+      "path": "skills/related-paper-analyzer/SKILL.md",
+      "bytes": 7255,
+      "sha256": "e8d232bc8644229075c2fb981f60101c80ed175ed9cb01dbd08cfbbaf44e90cb"
+    },
+    {
+      "path": "skills/result-report-generator/SKILL.md",
+      "bytes": 25710,
+      "sha256": "d5863332e86ff8fe212a005b02ddee2908480780c6319e2f8fa8063a878da519"
+    },
+    {
+      "path": "skills/robustness-checker/SKILL.md",
+      "bytes": 26295,
+      "sha256": "729a3e5b9106f57b2002cb5aa072916dc6f5249dd78c02ba67ca082569617185"
+    },
+    {
+      "path": "skills/solution-package-builder/SKILL.md",
+      "bytes": 35809,
+      "sha256": "898b50ecd809fb55d2356d2b392dd6e35383aaf7ae5c2b172d5aca36d1ebd375"
+    },
+    {
+      "path": "skills/symbol-table-builder/SKILL.md",
+      "bytes": 10564,
+      "sha256": "e1c3f19a813a7db6eac799d399dd2b2561a89b33625125ef7f7b877fe08ba358"
+    },
+    {
+      "path": "skills/workflow-orchestrator/SKILL.md",
+      "bytes": 36500,
+      "sha256": "eaca140ae4bc0c89f218096f304c92546f2b2c334a30533d00b704d21eb736b4"
+    },
+    {
+      "path": "skills/workflow-orchestrator/references/artifact-contract.md",
+      "bytes": 11448,
+      "sha256": "63afd5bd8a7500a2dd5b57a1feb9de44c888675a0cbce22c8769c7f4ddbb656c"
+    },
+    {
+      "path": "skills/workflow-orchestrator/references/decision-authority.md",
+      "bytes": 8359,
+      "sha256": "c32f04c3fbb23ddc15c7d3c733cf70439861e0563a57d5dd0daf8219448d9c18"
+    },
+    {
+      "path": "skills/workflow-orchestrator/references/examples.md",
+      "bytes": 14142,
+      "sha256": "1e84c490fc9b486e4354eb5f6f448abe1ab7d3c6a9b7f6eb7dc050e597fa3b44"
+    },
+    {
+      "path": "skills/workflow-orchestrator/scripts/artifact_contract.py",
+      "bytes": 18396,
+      "sha256": "bf1d5c8b9cca16910be1c2c55aa3d0f59e6ad696bd6cc7714bf303a5054be59c"
+    },
+    {
+      "path": "skills/workflow-orchestrator/tests/test_artifact_contract.py",
+      "bytes": 21263,
+      "sha256": "872100e3e4fe046f4824a1b0e347b5860ef7a00c0bf41ebbace0b9a441f97d63"
+    },
+    {
+      "path": "skills/write-math-modeling-papers/SKILL.md",
+      "bytes": 11221,
+      "sha256": "c8dc995784f4fd56fc6aee825eb6cf025c52fa9178d9a51bafdabca24b93d8b5"
+    },
+    {
+      "path": "skills/write-math-modeling-papers/agents/openai.yaml",
+      "bytes": 335,
+      "sha256": "b46e1d070a395a6153073509dca57a2d85eb4500173543f3c25055fbe927dee2"
+    },
+    {
+      "path": "skills/write-math-modeling-papers/assets/user-national-template/template_数学建模国赛.json",
+      "bytes": 179,
+      "sha256": "3fcab778da7a14a6fd62b02014c8a4de2a5e53fdd249439a83b09d96eda680ab"
+    },
+    {
+      "path": "skills/write-math-modeling-papers/assets/user-national-template/template_数学建模国赛.tex",
+      "bytes": 12464,
+      "sha256": "9391a6f9330fbda61759409b44f2a02160fe8d97998c40740c30ecfa863e729c"
+    },
+    {
+      "path": "skills/write-math-modeling-papers/references/ai-writing-and-disclosure.md",
+      "bytes": 4271,
+      "sha256": "529b86685b10b8971df1a7596e5ae5dfba063de3fc5105c899b476ba52c3264b"
+    },
+    {
+      "path": "skills/write-math-modeling-papers/references/appendix-and-supporting-materials.md",
+      "bytes": 6363,
+      "sha256": "fbe220d41930e8c97b703f264ea79d5aa132bc308cdba310ca9b3780725887a0"
+    },
+    {
+      "path": "skills/write-math-modeling-papers/references/chapter-workflow.md",
+      "bytes": 20446,
+      "sha256": "d282c196c2bd75ce71c20673b877eba1288849f69b9ca0156c68a9b05614eb0f"
+    },
+    {
+      "path": "skills/write-math-modeling-papers/references/evidence-and-scoring.md",
+      "bytes": 8408,
+      "sha256": "36a62c19e7e49b30462069e4c211945e24d04091eb321ba14a01909f17cf4e35"
+    },
+    {
+      "path": "skills/write-math-modeling-papers/references/heading-naming.md",
+      "bytes": 12214,
+      "sha256": "ec71f09dd72a2d7b878fb41679d6ebc34865adc2dcca4a815fcdcfe0cd8497cb"
+    },
+    {
+      "path": "skills/write-math-modeling-papers/references/latex-production.md",
+      "bytes": 9551,
+      "sha256": "db1b20111aef39f9c014a7d3349e1114274c910121590a5104eb041513e6cb21"
+    },
+    {
+      "path": "skills/write-math-modeling-papers/references/problem-type-writing.md",
+      "bytes": 15659,
+      "sha256": "3ccdd83c7c9f706ca3c635fa7890346d406352617db5ecda0187f2127fc39e9a"
+    },
+    {
+      "path": "skills/write-math-modeling-papers/references/submission-checklist.md",
+      "bytes": 9220,
+      "sha256": "18b02f02b8912e6ccfe94e48cab7876739a29abf9dbb56fe396e1b6336f6622e"
+    },
+    {
+      "path": "skills/write-math-modeling-papers/references/tracking-format.md",
+      "bytes": 2062,
+      "sha256": "2ec2a6dd3ba3e53cfce84c3ee7dfe14a55519d0937a6e6aeba515301652174b7"
+    },
+    {
+      "path": "skills/write-math-modeling-papers/references/user-template-contract.md",
+      "bytes": 10092,
+      "sha256": "12aabea3a8f4136e9bed44d6947496217f3eb45b8b028c9fea79a06e79e81f21"
+    },
+    {
+      "path": "skills/write-math-modeling-papers/references/writing-input-and-evidence.md",
+      "bytes": 10099,
+      "sha256": "07960f0a46475082c10a67b751fad16e48e11c0c625863aebba71056a2f267ff"
+    }
+  ]
+}
